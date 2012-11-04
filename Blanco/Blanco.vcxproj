@@ -37,15 +37,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IntDir>Debug\</IntDir>
-    <OutDir>Debug\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\$(PlatformShortName)\obj\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\$(PlatformShortName)\</OutDir>
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>F:\dev\libs\wtl;F:\dev\libs\boost_1_49_0;$(IncludePath)</IncludePath>
     <LibraryPath>F:\dev\libs\boost_1_49_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IntDir>Release\</IntDir>
-    <OutDir>Release\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\$(PlatformShortName)\obj\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\$(PlatformShortName)\</OutDir>
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>F:\dev\libs\wtl;F:\dev\libs\boost_1_49_0;$(IncludePath)</IncludePath>
     <LibraryPath>F:\dev\libs\boost_1_49_0\stage\lib;$(LibraryPath)</LibraryPath>
@@ -60,11 +60,13 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
     </Link>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -91,6 +93,7 @@
       <ExceptionHandling />
       <DebugInformationFormat />
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
