@@ -43,7 +43,6 @@ void ShowInstalledPrograms(CListViewCtrl mListView) {
 
       ZeroMemory(szInstalledProductCode, sizeof(szInstalledProductCode));
   } 
-
 }
 
 // EOF
