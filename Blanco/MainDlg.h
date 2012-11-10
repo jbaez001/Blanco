@@ -40,6 +40,8 @@ public:
     COMMAND_ID_HANDLER(IDOK, OnOK)
     COMMAND_ID_HANDLER(IDCANCEL, OnCancel)
     COMMAND_ID_HANDLER(ID_UNINSTALL_PMENU, OnClickUninstall)
+    COMMAND_ID_HANDLER(IDC_BTN_REFRESH, OnBtnRefresh)
+    COMMAND_ID_HANDLER(IDC_BTN_UNINSTALL, OnClickUninstall)
   END_MSG_MAP()
 
 // Handler prototypes (uncomment arguments if needed):
@@ -90,6 +92,10 @@ public:
       mListView.SetColumnWidth(i, columns[i].iSize);
     }
 
+    // LVS_EX_FULLROWSELECT - Enable full row selection.
+    // LVS_EX_GRIDLINES - Show grid lines. 
+    mListView.SetExtendedListViewStyle(LVS_EX_FULLROWSELECT|LVS_EX_GRIDLINES);
+
     // Populate mListView. 
     ShowInstalledPrograms(mListView);
 
@@ -117,7 +123,7 @@ public:
 
       CMenuHandle pPopupMenu = pMenu.GetSubMenu(0);
 
-      pPopupMenu.TrackPopupMenu(0, GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam), GetHwndProductList());
+      pPopupMenu.TrackPopupMenu(0, GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam), m_hWnd);
     }
 
     return 0;
@@ -138,7 +144,32 @@ public:
 
   LRESULT OnClickUninstall(WORD /*wNotifyCode*/, WORD wID, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
   {
-    MessageBox(L"HAH");
+    int x = mListView.GetCountPerPage() + mListView.GetTopIndex();
+
+    if (x > mListView.GetItemCount())
+      x = mListView.GetItemCount();
+
+    for (int i = mListView.GetTopIndex(); i < x; i++) {
+      if (mListView.GetItemState(i, LVIS_SELECTED) == LVIS_SELECTED) {
+        TCHAR tmp[1024] = {0};
+
+        mListView.GetItemText(i, 0, tmp, sizeof(tmp)/sizeof(tmp[0]));
+        std::wstring msiexec(L"MSIEXEC /x ");
+        std::wstring cmd = msiexec + std::wstring(tmp);
+
+        _wsystem(cmd.c_str());
+
+        break;
+      }
+    }
+
+    //_wsystem(L"MSIEXEC /x");
+    return 0;
+  }
+
+  LRESULT OnBtnRefresh(WORD /*wNotifyCode*/, WORD wID, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
+  {
+    ShowInstalledPrograms(mListView);
 
     return 0;
   }

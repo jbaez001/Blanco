@@ -8,7 +8,7 @@
 std::wstring GetProductStringInfo(LPCTSTR szProductCode, MSIINSTALLCONTEXT dwContext, 
                             LPCTSTR szSid, DWORD cchSid, LPCTSTR szProperty)
 {
-  wchar_t tmp[1024] = {0};
+  TCHAR tmp[1024] = {0};
   DWORD dwSize = 0;
 
   if (MsiGetProductInfoEx(szProductCode, cchSid == 0 ? NULL : szSid, 
@@ -23,7 +23,7 @@ std::wstring GetProductStringInfo(LPCTSTR szProductCode, MSIINSTALLCONTEXT dwCon
 void ShowInstalledPrograms(CListViewCtrl mListView) {
   mListView.DeleteAllItems();
 
-  LPCTSTR szUserSid = _T("s-1-1-0");
+  LPCTSTR szUserSid = _T("s-1-1-0");  // All users.
   TCHAR szInstalledProductCode[39] = {0};
   MSIINSTALLCONTEXT dwInstalledContext;
   TCHAR szSid[128] = {0}; 
