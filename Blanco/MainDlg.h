@@ -152,8 +152,8 @@ public:
     for (int i = mListView.GetTopIndex(); i < x; i++) {
       if (mListView.GetItemState(i, LVIS_SELECTED) == LVIS_SELECTED) {
         TCHAR tmp[1024] = {0};
+        mListView.GetItemText(i, 0, tmp, GetArraySize(tmp));
 
-        mListView.GetItemText(i, 0, tmp, sizeof(tmp)/sizeof(tmp[0]));
         std::wstring msiexec(L"MSIEXEC /x ");
         std::wstring cmd = msiexec + std::wstring(tmp);
 
@@ -162,8 +162,6 @@ public:
         break;
       }
     }
-
-    //_wsystem(L"MSIEXEC /x");
     return 0;
   }
 
