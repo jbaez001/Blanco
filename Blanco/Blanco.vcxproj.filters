@@ -38,8 +38,15 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\Blanco.ico">
+    <Image Include="res\64_Blanco.ico">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Authors.txt" />
+    <Text Include="..\License.txt" />
   </ItemGroup>
 </Project>

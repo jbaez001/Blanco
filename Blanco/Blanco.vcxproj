@@ -134,7 +134,14 @@
     <ResourceCompile Include="Blanco.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\Blanco.ico" />
+    <Image Include="res\64_Blanco.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Authors.txt" />
+    <Text Include="..\License.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

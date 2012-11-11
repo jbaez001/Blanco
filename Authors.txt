@@ -1,0 +1,5 @@
+;Genscripts
+Juan Baez <jbaez at genscripts.net>
+
+;Icons
+Jigsoar Icons <http://www.jigsoaricons.com/>
