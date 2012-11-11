@@ -3,7 +3,7 @@
 
 Blanco is basically an uninstaller that was born out of frustration. To make a long story short, I had an HDD where I installed all of my programs (a separate drive than the OS itself). This drive had died. There were a lot of programs that just would not uninstall using the fancy "Add or Remove Programs" utility that Windows has. In some cases where the application in question was successfully uninstalled, it could not be reinstalled. Visual Studio for example, kept telling me "Invalid Drive" whenever I attempted to reinstall it.
 
-For Example: ![Lazy Coders](https://dl.dropbox.com/u/389096/img/vs2012.png "Lazy Coders")
+For Example: ![Lazy](https://dl.dropbox.com/u/389096/img/vs2012.png "Lazy Coders")
 
 Alas, after a month of search I had found a solution. It turns out that the Windows SDK has a nifty MSI (Windows Installer) public API. I perused through the API and wrote "Blanco." Blanco basically lists all of the programs that Windows thinks that are installed (I say think because the programs that were giving me problems were not actually installed). Once you select the program that you want to uninstall, you can either right click to bring up the context menu, or click the “Uninstall” button to uninstall it.
 
