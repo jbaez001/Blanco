@@ -66,25 +66,25 @@
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(PlatformShortName)\obj\$(ProjectName)\</IntDir>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(PlatformShortName)\</OutDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>F:\dev\libs\wtl;F:\dev\libs\boost_1_49_0;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\dev\libs\boost_1_49_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>../../../libs/WTL10_10320_Release/Include</IncludePath>
+    <LibraryPath>../../../libs/WTL10_10320_Release/Include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>F:\dev\libs\wtl;F:\dev\libs\boost_1_49_0;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\dev\libs\boost_1_49_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>../../../libs/WTL10_10320_Release/Include</IncludePath>
+    <LibraryPath>../../../libs/WTL10_10320_Release/Include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(PlatformShortName)\obj\$(ProjectName)\</IntDir>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(PlatformShortName)\</OutDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>F:\dev\libs\wtl;F:\dev\libs\boost_1_49_0;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\dev\libs\boost_1_49_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>../../../libs/WTL10_10320_Release/Include</IncludePath>
+    <LibraryPath>../../../libs/WTL10_10320_Release/Include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>../../../libs/WTL10_10320_Release/Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>../../../libs/WTL10_10320_Release/Include</IncludePath>
+    <LibraryPath>../../../libs/WTL10_10320_Release/Include</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
